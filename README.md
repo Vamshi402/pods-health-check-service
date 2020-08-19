@@ -14,7 +14,7 @@ This repository will be used to notify errors or exceptions raised in open shift
 
 - [x] First, clone pods-health-check-service project on your local computer
 
-  $ git clone https://
+  $ https://github.com/Vamshi402/pods-health-check-service
 
 
 - [x] This project has an input file where you can provide input parameters to run this project. Below are the input parameters required:
