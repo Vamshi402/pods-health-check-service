@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Openshift Pods HealthCheck Error Notification</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style rel="stylesheet" type="text/css">
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 11px;
+}
+    </head>
+    <body>
+        <div
+            style="display: -webkit-flex;display: flex;-webkit-flex-flow: row wrap;flex-flow: row wrap;">
+            <header
+                style="background:white;color:white;padding: 15px;-webkit-flex: 1 100%;flex: 1 100%;">
+                <img width="170" height="60" src="cid:logo" alt="optum_logo.png"
+                    style="padding: 30px;" />
+            </header>
+            &nbsp;
+            <br />
+            <br />
+            <img width="1000" height="5" src="cid:seperator" alt="optum_seperator.png"
+                style="padding: 30px;" />
+            <br />
+            <br />
+            <#if inlinetext??>
+            <p>${inlinetext}</p>
+            </#if>
+            <article
+                style="padding:30px 0px;text-align: left;-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;"
+            ><h2 style="padding-bottom: 1.5em;font-weight: bold;font-size: 14px;">${title}</h2></article>
+            <#if (count != 0)>
+            <table
+                style="width:950;border-collapse: collapse;font-family: Tahoma, Arial, Helvetica, sans-serif;"
+                summary="Consumer 360 - Event Processor Error Summary">
+                <thead>
+                    <tr>
+                        <th
+                            style="padding: 2px 8px;border: 2px solid #ececec;background: #ff9800;text-align: left;font-weight: bold;font-size: 12px;color: #fff;"
+                            >TOPIC</th>
+                        <th
+                            style="padding: 2px 8px;border: 2px solid #ececec;background: #ff9800;text-align: left;font-weight: bold;font-size: 12px;color: #fff;"
+                            >PARTITION</th>
+                        <th
+                            style="padding: 2px 8px;border: 2px solid #ececec;background: #ff9800;text-align: left;font-weight: bold;font-size: 12px;color: #fff;"
+                            >OFFSET</th>
+                        <th
+                            style="padding: 2px 8px;border: 2px solid #ececec;background: #ff9800;text-align: left;font-weight: bold;font-size: 12px;color: #fff;"
+                            >HEADERS</th>
+                    </tr>
+                </thead>
+                <#function zebra index>
+				  <#if (index % 2) == 0>
+				    <#return "#fff" />
+				  <#else>
+				    <#return "#fbd7b4" />
+				  </#if>
+				</#function>
+                <tbody>
+	                <#list statsList as stats>
+	                    <tr>
+	                    	<td style="white-space:nowrap; padding: 4px 8px;border: 2px solid #ececec;background: ${zebra(stats?index)};"
+	                            >${stats.topic}</td>
+	                        <td style="padding: 4px 8px;border: 2px solid #ececec;background: ${zebra(stats?index)};"
+	                            >${stats.partition}</td>
+	                        <td style="white-space:nowrap; padding: 4px 8px;border: 2px solid #ececec;background: ${zebra(stats?index)};"
+	                            >${stats.offSet}</td>
+	                        <td style="padding: 4px 8px;border: 2px solid #ececec;background: ${zebra(stats?index)};"
+	                            >${stats.headers}</td>
+	                    </tr>
+	                </#list>
+               </tbody>
+            </table>
+            <#elseif mailcontent??>
+            		<p>${mailcontent}</p>
+            </#if>
+            <br/>
+            <br/>
+            <br/>
+            <footer
+                style="background:white;padding:30px 0px;-webkit-flex: 1 100%;flex: 1 100%;-webkit-order:3;order:3;">
+                <img width="1000" height="5" src="cid:seperator" alt="optum_seperator.png"
+                    style="padding: 30px;" />
+            </footer>
+        </div>
+    </body>
+</html>

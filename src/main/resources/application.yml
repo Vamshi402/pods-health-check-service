@@ -1,0 +1,53 @@
+server:
+  port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: jolokia
+
+kafka:
+  stream:
+    specific-avro-reader: false
+    default-deserialization-exception-handler: com.optum.c360.common.errors.SkipRateDeserializationExceptionHandler
+    skip-rate-deserialization-exception-handler-threshold: ${SKIP_RATE_FAIL_THRESHOLD}
+    application-id: ${APPLICATION_ID}
+    group-id: pods-c360-healthcheck
+    auto-offset-reset: latest
+
+logging:
+  file: logs/spring-boot-logging.log
+  level:
+    com.optum.c360.common: DEBUG
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
+  mail:
+    default-encoding: UTF-8
+    host: mailo2.uhc.com
+    port: 25
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+        debug:  false
+
+email:
+  enabled: true
+  to: ${TO_EMAIL:vamshi_angala@optum.com}
+  from: ${FROM_EMAIL:vamshi_angala@optum.com}
+  secondsTillNextEmail: 1
+
+mail:
+  host: mail.uhc.com
+  from: vamshi_angala@optum.com
+  to: vamshi_angala@optum.com
+
+
+AES_KEY: c60dea7f5b4cdba66d4f654a69b4321f9ccd71f8a514604012463bd925e54c73
