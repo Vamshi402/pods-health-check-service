@@ -1,2 +1,0 @@
-https://ocp-ctc-core-nonprod.optum.com:443,nonprod-c360-cross-carrier-eligibility-processor-0,ocp_nonprod456,583529813CE139D2604BF2E0DB2A5776685AC2D46AF5B4B9D92BB14B6B8AD8EEA5441BDC,vamshi_angala@optum.com
-https://ocp-ctc-core-nonprod.optum.com:443,nonprod-c360-cross-carrier-ingester,ocp_nonprod456,583529813CE139D2604BF2E0DB2A5776685AC2D46AF5B4B9D92BB14B6B8AD8EEA5441BDC,vamshi_angala@optum.com
