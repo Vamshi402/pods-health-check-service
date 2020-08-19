@@ -17,7 +17,7 @@ This repository will be used to notify errors or exceptions raised in open shift
   $ https://github.com/Vamshi402/pods-health-check-service
 
 
-- [x] This project has an input file where you can provide input parameters to run this project. Below are the input parameters required:
+- [x] This project has an input file where you can provide input parameters to run this project. Below are the input parameters required with comma(,) separated:
 
       1. OpenShift URL (Ex:https://ocp-ctc-core-nonprod.optum.com:443)
       2. OpenShift Project Name (Ex:nonprod-c360-cross-carrier-eligibility-processor-0)
