@@ -5,7 +5,7 @@ This repository will be used to notify errors or exceptions raised in open shift
 
 > # Functionality
 
-- [x] Takes configurations as an input file.
+- [x] Takes configurations as an input file
 - [x] Cron Job Scheduler implementation.
 - [x] Automatically trigger/notify email when an error occurred due to kafka certificates change, Cassandra certificates change, password change, Topic name change etc.
 
@@ -17,7 +17,7 @@ This repository will be used to notify errors or exceptions raised in open shift
   $ https://github.com/Vamshi402/pods-health-check-service
 
 
-- [x] This project has an input file where you can provide input parameters to run this project. Below are the input parameters required with comma(,) separated:
+- [x] This project has an input file (OpenshiftProjectsInfo.txt - available inside resources folder) where you can provide input parameters to run this project. Below are the input parameters required with comma(,) separated:
 
       1. OpenShift URL (Ex:https://ocp-ctc-core-nonprod.optum.com:443)
       2. OpenShift Project Name (Ex:nonprod-c360-cross-carrier-eligibility-processor-0)
