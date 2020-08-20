@@ -22,7 +22,7 @@ This repository will be used to notify errors or exceptions raised in open shift
       1. OpenShift URL (Ex:https://ocp-ctc-core-nonprod.optum.com:443)
       2. OpenShift Project Name (Ex:nonprod-c360-cross-carrier-eligibility-processor-0)
       3. OpenShift login username
-      4. OpenShift login password (password should be decrypt using AES_KEY used in application.yml file.
+      4. OpenShift login password (password should be encrypt using AES_KEY used in application.yml file)
       5. DL/Individual email id (email id to sent notification about the error pod status)
 
 
